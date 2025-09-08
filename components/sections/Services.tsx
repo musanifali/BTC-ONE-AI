@@ -10,32 +10,37 @@ const Services = () => {
     {
       id: '1',
       title: 'AI Strategy & Consulting',
-      description: 'Develop comprehensive AI roadmaps tailored to your business objectives. [Updated]',
-      gridArea: 'card1'
+      description: 'Develop comprehensive AI roadmaps tailored to your business objectives.',
+      gridArea: 'card1',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3'
     },
     {
       id: '2',
       title: 'Machine Learning Solutions',
       description: 'End-to-end machine learning development from data preprocessing to model deployment.',
-      gridArea: 'card2'
+      gridArea: 'card2',
+      image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3'
     },
     {
       id: '3',
       title: 'Neural Network Automation',
-      description: 'Deploy advanced deep learning solutions that automate complex business processes and enhance decision-making capabilities. ',
-      gridArea: 'card3'
+      description: 'Deploy advanced deep learning solutions that automate complex business processes and enhance decision-making capabilities.',
+      gridArea: 'card3',
+      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3'
     },
     {
       id: '4',
       title: 'Security & Compliance',
       description: 'Enterprise-grade security frameworks designed specifically for AI systems.',
-      gridArea: 'card4'
+      gridArea: 'card4',
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3'
     },
     {
       id: '5',
       title: 'Performance Analytics',
       description: 'Real-time monitoring and optimization of AI system performance with advanced analytics dashboards.',
-      gridArea: 'card5'
+      gridArea: 'card5',
+      image: 'https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3'
     }
   ];
 
@@ -75,21 +80,21 @@ const Services = () => {
           className="grid gap-6"
           style={{
             gridTemplateColumns: 'repeat(3, 1fr)',
-            gridTemplateRows: '0.7fr 0.7fr 0.7fr 1fr',
+            gridTemplateRows: '1fr 1fr 1fr 1.2fr',
             gridTemplateAreas: `
               "card1 card2 card3"
               "card1 card2 card3"
               "card1 card2 card4"
               "card5 card5 card5"
             `,
-            minHeight: '600px'
+            minHeight: '800px'
           }}
         >
           {services.map((service) => {
             return (
               <div
                 key={service.id}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-green-200 group cursor-pointer hover:-translate-y-1"
+                className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer hover:-translate-y-1 relative overflow-hidden"
                 style={{ 
                   gridArea: service.gridArea,
                   display: 'flex',
@@ -97,70 +102,37 @@ const Services = () => {
                   justifyContent: service.gridArea === 'card2' ? 'flex-end' : service.gridArea === 'card4' ? 'center' : 'flex-start',
                   minHeight: '100%',
                   overflow: 'hidden',
-                  ...(service.gridArea === 'card1' && {
-                    backgroundImage: 'url(/images/services/card1.jpg)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    position: 'relative'
-                  }),
-                  ...(service.gridArea === 'card2' && {
-                    backgroundImage: 'url(/images/services/card21.jpg)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    position: 'relative'
-                  }),
-                  ...(service.gridArea === 'card3' && {
-                    backgroundImage: 'url(/images/services/card3.jpg)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    position: 'relative'
-                  }),
-                  ...(service.gridArea === 'card5' && {
-                    backgroundImage: 'url(/images/services/card51.jpg)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    position: 'relative'
-                  })
+                  backgroundImage: `url(${service.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  position: 'relative'
                 }}
               >
+                {/* Enhanced Gradient Overlay for better text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20"></div>
+                
                 {/* Content */}
-                <div className={`${service.gridArea === 'card2' ? '' : 'flex-1'} relative z-10`}>
-                  <h3 className={`${service.gridArea === 'card4' ? 'text-lg' : 'text-xl'} font-bold ${
-                    (service.gridArea === 'card1' || service.gridArea === 'card2' || service.gridArea === 'card3' || service.gridArea === 'card5') 
-                      ? 'text-white' 
-                      : 'text-gray-900'
-                  } ${service.gridArea === 'card4' ? 'mb-2' : 'mb-3'} ${
-                    (service.gridArea === 'card1' || service.gridArea === 'card2' || service.gridArea === 'card3' || service.gridArea === 'card5') 
-                      ? 'group-hover:text-green-100' 
-                      : 'group-hover:text-green-700'
-                  } transition-colors`}>
-                    {service.title}
-                  </h3>
-                  <p className={`${
-                    (service.gridArea === 'card1' || service.gridArea === 'card2' || service.gridArea === 'card3' || service.gridArea === 'card5') 
-                      ? 'text-white/90' 
-                      : 'text-gray-600'
-                  } leading-relaxed ${service.gridArea === 'card4' ? 'text-sm mb-3' : 'mb-4'} ${service.gridArea === 'card4' ? 'text-sm' : 'text-base'}`}>
-                    {service.description}
-                  </p>
-                </div>
-
-                {/* CTA */}
-                <div className={`relative z-10 flex items-center ${
-                  (service.gridArea === 'card1' || service.gridArea === 'card2' || service.gridArea === 'card3' || service.gridArea === 'card5') 
-                    ? 'text-white' 
-                    : 'text-green-600'
-                } font-medium ${
-                  (service.gridArea === 'card1' || service.gridArea === 'card2' || service.gridArea === 'card3' || service.gridArea === 'card5') 
-                    ? 'group-hover:text-green-100' 
-                    : 'group-hover:text-green-700'
-                } transition-colors`}>
-                  <span className="mr-2">Learn more</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <div className={`${service.gridArea === 'card2' ? '' : 'flex-1'} relative z-10 p-6 flex flex-col justify-end h-full`}>
+                  {/* Additional background for text area */}
+                  <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-black/60 to-transparent rounded-b-2xl"></div>
+                  
+                  <div className="relative z-10">
+                    <h3 className="text-xl font-bold text-white leading-tight mb-3 group-hover:text-green-200 transition-colors drop-shadow-lg">
+                      {service.title}
+                    </h3>
+                    <p className="text-white/90 leading-relaxed text-sm mb-4 drop-shadow-md">
+                      {service.description}
+                    </p>
+                    
+                    {/* CTA Button - Glassmorphism style like Blog */}
+                    <div className="mt-auto">
+                      <div className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 inline-flex items-center gap-2 group-hover:bg-green-500/80 w-fit">
+                        Learn more
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             );

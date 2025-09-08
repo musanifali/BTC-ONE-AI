@@ -12,7 +12,7 @@ const Blog = () => {
       author: 'andrew',
       title: 'Is Artificial Intelligence accessible to businesses of all sizes',
       excerpt: 'Yes, AI solutions are becoming increasingly accessible to businesses of all sizes, thanks to cloud-based platforms and user-friendly tools.',
-      image: '/images/blog/ai-business.jpg',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3',
       slug: 'ai-accessible-businesses'
     },
     {
@@ -21,7 +21,7 @@ const Blog = () => {
       author: 'andrew',
       title: 'How can I get started with Artificial Intelligence for my business',
       excerpt: 'Getting started with AI involves identifying key use cases, choosing the right tools, and building a data-driven foundation for success.',
-      image: '/images/blog/ai-getting-started.jpg',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3',
       slug: 'getting-started-ai-business'
     },
     {
@@ -30,7 +30,7 @@ const Blog = () => {
       author: 'sarah',
       title: 'The Future of Machine Learning in Healthcare Innovation',
       excerpt: 'Discover how machine learning is revolutionizing healthcare through predictive analytics, personalized medicine, and diagnostic automation.',
-      image: '/images/blog/ml-healthcare.jpg',
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3',
       slug: 'machine-learning-healthcare'
     }
   ];
@@ -80,26 +80,22 @@ const Blog = () => {
           {blogPosts.map((post) => (
             <article 
               key={post.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1 group"
+              className="relative h-[28rem] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1 group"
+              style={{
+                backgroundImage: `url(${post.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }}
             >
-              {/* Card Image */}
-              <div className="aspect-video bg-gradient-to-br from-green-100 to-emerald-100 relative overflow-hidden">
-                {/* Placeholder for blog image */}
-                <div className="absolute inset-0 bg-gradient-to-br from-green-200/50 to-emerald-300/50 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="w-16 h-16 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-3">
-                      <span className="text-white font-bold text-xl">AI</span>
-                    </div>
-                    <p className="text-gray-600 text-sm font-medium">Blog Image</p>
-                  </div>
-                </div>
-              </div>
+              {/* Gradient Mask - Dark to Transparent */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
               
-              {/* Card Content */}
-              <div className="p-6 space-y-4">
+              {/* Content Overlay */}
+              <div className="absolute inset-0 p-6 flex flex-col justify-end">
                 
                 {/* Date & Author */}
-                <div className="flex items-center gap-4 text-sm text-gray-500">
+                <div className="flex items-center gap-4 text-sm text-white/80 mb-3">
                   <div className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
                     <span>{post.date}</span>
@@ -111,21 +107,23 @@ const Blog = () => {
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-gray-900 leading-tight group-hover:text-green-700 transition-colors">
+                <h3 className="text-xl font-bold text-white leading-tight mb-4 group-hover:text-green-200 transition-colors">
                   {post.title}
                 </h3>
                 
-                {/* Excerpt */}
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  {post.excerpt}
-                </p>
-                
-                {/* Read More Link */}
-                <div className="pt-2">
-                  <span className="text-green-600 font-medium text-sm group-hover:text-green-700 transition-colors inline-flex items-center gap-1">
-                    Read more
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </span>
+                {/* CTA Button at Bottom Corner */}
+                <div className="flex justify-between items-end">
+                  <div className="flex-1">
+                    <p className="text-white/70 text-sm leading-relaxed line-clamp-2">
+                      {post.excerpt}
+                    </p>
+                  </div>
+                  <div className="ml-4">
+                    <div className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 inline-flex items-center gap-2 group-hover:bg-green-500/80">
+                      Read More
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
                 </div>
                 
               </div>
