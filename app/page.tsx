@@ -14,6 +14,8 @@ import Footer from '@/components/sections/Footer';
 // Force reload dependency
 import '../force-reload.js';
 
+// Deployment timestamp: 2025-09-08T15:30:00Z
+
 // Cache buster: BLOG SECTION ADDED
 export default function Home() {
   return (
