@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 11 15 13; /* #0B0F0D */
+    --foreground: 231 246 239; /* #E7F6EF */
+
+    --card: 17 24 22; /* #111816 */
+    --card-foreground: 231 246 239; /* #E7F6EF */
+
+    --popover: 17 24 22; /* #111816 */
+    --popover-foreground: 231 246 239; /* #E7F6EF */
+
+    --primary: 53 214 135; /* #35D687 */
+    --primary-foreground: 7 27 22; /* #071B16 */
+
+    --secondary: 31 191 162; /* #1FBFA2 */
+    --secondary-foreground: 7 27 22; /* #071B16 */
+
+    --muted: 149 183 171; /* #95B7AB */
+    --muted-foreground: 231 246 239; /* #E7F6EF */
+
+    --accent: 122 240 176; /* #7AF0B0 */
+    --accent-foreground: 7 27 22; /* #071B16 */
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 29 42 37; /* #1D2A25 */
+    --input: 29 42 37; /* #1D2A25 */
+    --ring: 53 214 135; /* #35D687 */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 11 15 13; /* #0B0F0D */
+    --foreground: 231 246 239; /* #E7F6EF */
+
+    --card: 17 24 22; /* #111816 */
+    --card-foreground: 231 246 239; /* #E7F6EF */
+
+    --popover: 17 24 22; /* #111816 */
+    --popover-foreground: 231 246 239; /* #E7F6EF */
+
+    --primary: 53 214 135; /* #35D687 */
+    --primary-foreground: 7 27 22; /* #071B16 */
+
+    --secondary: 31 191 162; /* #1FBFA2 */
+    --secondary-foreground: 7 27 22; /* #071B16 */
+
+    --muted: 149 183 171; /* #95B7AB */
+    --muted-foreground: 231 246 239; /* #E7F6EF */
+
+    --accent: 122 240 176; /* #7AF0B0 */
+    --accent-foreground: 7 27 22; /* #071B16 */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 29 42 37; /* #1D2A25 */
+    --input: 29 42 37; /* #1D2A25 */
+    --ring: 53 214 135; /* #35D687 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgb(17 24 22);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(53 214 135);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(47 193 120);
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent;
+  }
+  
+  .hero-gradient {
+    background: #ebf5ed;
+  }
+}
+
+/* Marquee Animations */
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-right {
+  animation: marquee-right 30s linear infinite;
+}
+
+.animate-marquee-left {
+  animation: marquee-left 30s linear infinite;
+}
