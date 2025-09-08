@@ -8,12 +8,13 @@ import Features from '@/components/sections/Features';
 import Pricing from '@/components/sections/Pricing';
 import FAQ from '@/components/sections/FAQ';
 import AboutSection from '@/components/sections/AboutSection';
+import Blog from '@/components/sections/Blog';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/sections/Footer';
 // Force reload dependency
 import '../force-reload.js';
 
-// Cache buster: CONTACT & FOOTER SECTIONS ADDED
+// Cache buster: BLOG SECTION ADDED
 export default function Home() {
   return (
     <>
@@ -21,11 +22,12 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
-        <MarqueeBands />
         <AboutSection />
         <Features />
         <Pricing />
         <FAQ />
+        <MarqueeBands />
+        <Blog />
         <Contact />
       </main>
       <Footer />
