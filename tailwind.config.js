@@ -17,52 +17,49 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: "var(--border)",
+        input: "var(--input)",
+        ring: "var(--ring)",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        
+        // Primary Brand Colors
         primary: {
-          DEFAULT: "#35D687",
-          foreground: "hsl(var(--primary-foreground))",
-          hover: "#2FC178",
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)",
         },
-        secondary: {
-          DEFAULT: "#1FBFA2",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
+        
+        // System Colors
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "var(--destructive)",
+          foreground: "var(--destructive-foreground)",
         },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "#7AF0B0",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
+        
+        // Surface Colors
         card: {
-          DEFAULT: "#111816",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "var(--card)",
+          foreground: "var(--card-foreground)",
         },
-        // Custom Bitcoin AI colors
-        'brand-green': '#35D687',
-        'brand-green-hover': '#2FC178',
-        'secondary-teal': '#1FBFA2',
-        'accent-lime': '#7AF0B0',
-        'dark-gradient-start': '#071B16',
-        'dark-gradient-end': '#0E2E24',
-        'surface-dark': '#0B0F0D',
-        'card-surface': '#111816',
-        'border-color': '#1D2A25',
-        'text-on-dark': '#E7F6EF',
-        'muted-text': '#95B7AB',
+        
+        // Interactive Elements
+        accent: {
+          DEFAULT: "var(--accent)",
+          foreground: "var(--accent-foreground)",
+        },
+        
+        // Muted colors for text hierarchy
+        muted: {
+          DEFAULT: "var(--muted)",
+          foreground: "var(--muted-foreground)",
+        },
+
+        // Theme-specific colors
+        "dark-bg": "var(--background-dark)",
+        "dark-fg": "var(--foreground-dark)",
+        "dark-card": "var(--card-dark)",
+        "light-bg": "var(--background-light)",
+        "light-fg": "var(--foreground-light)",
+        "light-card": "var(--card-light)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -98,10 +95,7 @@ module.exports = {
         "slide-in-left": "slide-in-left 0.6s ease-out",
         "slide-in-right": "slide-in-right 0.6s ease-out",
       },
-      backgroundImage: {
-        'gradient-dark': 'linear-gradient(135deg, #071B16 0%, #0E2E24 100%)',
-        'gradient-primary': 'linear-gradient(135deg, #35D687 0%, #1FBFA2 100%)',
-      },
+      // Removed gradient backgrounds for consistency
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -39,20 +39,20 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-24 px-4" style={{ backgroundColor: '#ebf5ed' }}>
+    <section className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 section-light">
       <div className="container mx-auto max-w-4xl">
         
         {/* Section Header */}
         <div className="text-center mb-16">
           {/* Eyebrow Label */}
           <div className="mb-8">
-            <span className="inline-block px-4 py-2 bg-white/80 rounded-full border border-green-200 text-green-700 text-sm font-medium">
+            <span className="inline-block px-4 py-2 bg-primary/10 rounded-full border border-primary/20 text-primary text-sm font-medium">
               / faq /
             </span>
           </div>
           
           {/* Main Heading */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
             Everything you need<br />
             to know about
           </h2>
@@ -61,21 +61,21 @@ const FAQ = () => {
         {/* Accordion List */}
         <div className="space-y-6 mb-12">
           {faqs.map((faq, index) => (
-            <div key={faq.id} className="border-b border-gray-200 pb-6">
+            <div key={faq.id} className="border-b border-border pb-6">
               
               {/* Question Row */}
               <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full flex items-center justify-between text-left group focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-lg p-2 -m-2"
+                className="w-full flex items-center justify-between text-left group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 rounded-lg p-2 -m-2"
               >
                 <div className="flex items-center space-x-6 flex-1">
                   {/* Number */}
-                  <div className="text-2xl md:text-3xl font-bold text-gray-400 min-w-[60px]">
+                  <div className="text-2xl md:text-3xl font-bold text-muted min-w-[60px]">
                     {String(index + 1).padStart(2, '0')}
                   </div>
                   
                   {/* Question */}
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-green-700 transition-colors">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {faq.question}
                   </h3>
                 </div>
@@ -83,7 +83,7 @@ const FAQ = () => {
                 {/* Arrow Icon */}
                 <div className="ml-4">
                   <ChevronDown 
-                    className={`w-6 h-6 text-gray-600 group-hover:text-green-600 transition-all duration-300 ${
+                    className={`w-6 h-6 text-muted group-hover:text-primary transition-all duration-300 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />
@@ -99,7 +99,7 @@ const FAQ = () => {
                   <div className="min-w-[60px]"></div>
                   
                   {/* Answer Content */}
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-lg text-muted-foreground leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
@@ -112,7 +112,7 @@ const FAQ = () => {
         <div className="text-center">
           <Button 
             size="lg"
-            className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg rounded-full shadow-lg group"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg rounded-full shadow-lg group"
           >
             Explore more
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -124,7 +124,7 @@ const FAQ = () => {
       <div className="fixed bottom-8 right-8 z-50">
         <button
           onClick={scrollToTop}
-          className="w-12 h-12 bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
+          className="w-12 h-12 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
           aria-label="Scroll to top"
         >
           <ArrowUp className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />

@@ -36,7 +36,7 @@ const Blog = () => {
   ];
 
   return (
-    <section className="py-24 px-4" style={{ backgroundColor: '#ebf5ed' }}>
+    <section className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 section-light">
       <div className="container mx-auto max-w-7xl">
         
         {/* Section Header */}
@@ -46,7 +46,7 @@ const Blog = () => {
           <div className="lg:max-w-4xl">
             {/* Eyebrow label */}
             <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-white border border-green-200 text-gray-600 rounded-full text-sm font-medium shadow-sm">
+              <span className="inline-block px-4 py-2 bg-card border border-border text-muted rounded-full text-sm font-medium shadow-sm">
                 / blog /
               </span>
             </div>
@@ -54,7 +54,7 @@ const Blog = () => {
             {/* Main heading - stacked and bold */}
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               Exploring the frontiers of{' '}
-              <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+              <span style={{ color: '#35D687' }}>
                 artificial Intelligence:
               </span>
               <br />
@@ -66,7 +66,7 @@ const Blog = () => {
           <div className="lg:pt-12">
             <Button 
               size="lg" 
-              className="bg-green-600 hover:bg-green-700 text-white shadow-lg group rounded-full"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg group rounded-full"
             >
               More articles
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -119,7 +119,7 @@ const Blog = () => {
                     </p>
                   </div>
                   <div className="ml-4">
-                    <div className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 inline-flex items-center gap-2 group-hover:bg-green-500/80">
+                    <div className="bg-white/20 backdrop-blur-sm hover:bg-primary/90 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 inline-flex items-center gap-2">
                       Read More
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>

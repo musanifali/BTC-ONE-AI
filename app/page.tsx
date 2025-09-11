@@ -24,11 +24,11 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
+        <MarqueeBands />
         <AboutSection />
         <Features />
         <Pricing />
         <FAQ />
-        <MarqueeBands />
         <Blog />
         <Contact />
       </main>

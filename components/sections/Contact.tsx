@@ -6,39 +6,39 @@ import { ArrowRight, Phone, MapPin } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section className="py-24 bg-gray-900 text-white">
-      <div className="container mx-auto px-4 max-w-7xl">
+    <section className="py-12 sm:py-16 lg:py-24 section-dark">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         
         {/* Main Contact Panel */}
-        <div className="bg-gray-800 rounded-3xl p-12 md:p-16 relative overflow-hidden">
+        <div className="bg-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 relative overflow-hidden">
           
           {/* Two-column grid */}
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
             
             {/* Left Column */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {/* Eyebrow label */}
               <div className="inline-block">
-                <span className="text-green-400 text-sm font-mono bg-green-400/10 px-3 py-1 rounded-full">
+                <span className="text-primary text-xs sm:text-sm font-mono bg-primary/10 px-3 py-1 rounded-full">
                   / get in touch /
                 </span>
               </div>
               
               {/* Headline - Large stacked text */}
               <div className="space-y-2">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-foreground">
                   Ready to Transform
                 </h2>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
                   Your Business with
                 </h2>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary">
                   AI Solutions?
                 </h2>
               </div>
               
               {/* Supporting text */}
-              <p className="text-xl text-gray-300 leading-relaxed max-w-lg">
+              <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
                 Let's discuss how our cutting-edge AI and machine learning solutions can revolutionize your operations and drive unprecedented growth.
               </p>
               
@@ -131,7 +131,7 @@ const Contact = () => {
                     <Button 
                       type="submit" 
                       size="lg" 
-                      className="w-full bg-green-600 hover:bg-green-700 text-white shadow-lg group rounded-full py-4"
+                      className="w-full bg-primary hover:bg-primary/90 text-white shadow-lg group rounded-full py-4"
                     >
                       Send Message
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

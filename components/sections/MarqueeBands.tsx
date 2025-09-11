@@ -25,7 +25,7 @@ const MarqueeBands = () => {
     <div className="relative overflow-hidden">
       
       {/* First Marquee Band - Moving Right */}
-      <div className="py-8 bg-gray-900 border-b border-gray-700/50">
+      <div className="py-4 sm:py-6 lg:py-8 bg-gray-900 border-b border-gray-700/50">
         <div className="relative transform -rotate-2">
           <div className="flex whitespace-nowrap animate-marquee-right">
             {/* Repeat the content multiple times for seamless loop */}
